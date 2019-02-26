@@ -1,0 +1,52 @@
+<div class="container">
+  <h2 class="paddingBottom30">Messages</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+
+      <tr *ngFor="let object of objects">
+        <td>
+          <p class="alignright"><a routerLink="/detail_message/{{object[2]}}">Details</a></p>
+          <p>
+            <strong>({{object[2]}}) {{object[3]}}</strong>
+          </p>
+          <p *ngIf="object[4].toString().length > 100"> {{object[4].toString().substring(0,100)}} ... <a href=""
+                                                                                                         (ngClick)="readmore(object[2])">Read
+            more</a></p>
+          <p *ngIf="object[4].toString().length <= 100"> {{object[4]}}</p>
+          <small>
+            <div *ngIf="object[10]==='STUDENT'">From :
+              <a routerLink="/student_detail/id/{{object[8]}}">
+                <i>{{object[0]}} {{object[1]}}</i><br>
+              </a>
+            </div>
+            <div *ngIf="object[10]==='STAFF'">From :
+              <a routerLink="/staff_detail/id/{{object[8]}}">
+                <i>{{object[0]}} {{object[1]}}</i><br>
+              </a>
+            </div>
+            <div *ngIf="object[11]==='STUDENT'">To :
+              <a routerLink="/student_detail/id/{{object[9]}}">
+                <i>{{object[6]}} {{object[7]}}</i><br>
+              </a>
+            </div>
+            <div *ngIf="object[11]==='STAFF'">To :
+              <a routerLink="/staff_detail/id/{{object[9]}}">
+                <i>{{object[6]}} {{object[7]}}</i><br>
+              </a>
+            </div>
+            <i>Date : {{object[5] | date:'yyyy-MM-dd'}}</i>
+          </small>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <p>
+      Pages :
+      - <span *ngFor="let pgc of arrayOfPages" > <a routerLink="/list_messages/page/{{pgc}}/of/{{messagesPerPage}}"> {{pgc}} </a> - </span>
+    </p>
+  </div>
+</div>
+
+<app-footer></app-footer>

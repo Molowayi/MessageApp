@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <p>
+            <strong>({{object[2]}}) {{object[3]}}</strong>
+          </p>
+        </td>
+      </tr>
+      <!--<tr><td> <div class="">{{object[4]}}</div></td></tr>-->
+      <tr>
+        <td>
+          <span *ngIf="object[10]==='STUDENT'">From :
+            <a routerLink="/student_detail/id/{{object[8]}}">
+              <i>{{object[0]}} {{object[1]}}</i><br>
+            </a>
+          </span>
+          <span *ngIf="object[10]==='STAFF'">From :
+            <a routerLink="/staff_detail/id/{{object[8]}}">
+              <i>{{object[0]}} {{object[1]}}</i><br>
+            </a>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span *ngIf="object[11]==='STUDENT'">To :
+            <a routerLink="/student_detail/id/{{object[9]}}">
+              <i>{{object[6]}} {{object[7]}}</i><br>
+            </a>
+          </span>
+          <span *ngIf="object[11]==='STAFF'">To :
+            <a routerLink="/staff_detail/id/{{object[9]}}">
+              <i>{{object[6]}} {{object[7]}}</i><br>
+            </a>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <!--<td>-->
+          <!--<i>Date : {{object[5] | date:'yyyy-MM-dd'}}</i>-->
+      <!--</td>-->
+      </tr>
+    </table>
+    <div>{{object[4]}}</div>
+    <div><br>Date : {{object[5] | date:'yyyy-MM-dd'}}</div>
+  </div>
+</div>

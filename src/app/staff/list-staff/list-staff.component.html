@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h2 class="paddingBottom30">Staff Members</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+        <th>Role</th>
+        <th>Birth date</th>
+        <th>Details</th>
+      </tr>
+      <tr *ngFor="let person of staff">
+        <td>{{person.id}}</td>
+        <td>{{person.firstName | titlecase }}</td>
+        <td>{{person.lastName | uppercase }}</td>
+        <td>{{person.origin}}</td>
+        <td>{{person.role}}</td>
+        <td>{{person.birthDate | date:'EEEE, MMMM d, y'}}</td>
+        <td><a  routerLink="/staff_detail/id/{{person.id}}">Details</a></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h3 class="paddingBottom30">Students</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+        <th>School</th>
+        <th>Birthdate</th>
+        <th>Details</th>
+      </tr>
+      <tr *ngFor="let person of student">
+        <td>{{person.id}}</td>
+        <td>{{person.firstName | titlecase }}</td>
+        <td>{{person.lastName | uppercase }}</td>
+        <td>{{person.origin}}</td>
+        <td>{{person.school}}</td>
+        <td>{{person.birthDate | date:'EEEE, MMMM d, y'}}</td>
+        <td><a  routerLink="/student_detail/id/{{person.id}}">Details</a></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

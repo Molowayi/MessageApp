@@ -1,0 +1,118 @@
+<div class="container" id="staff">
+  <h2 class="paddingBottom30">Add a new staff member</h2>
+  <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+  <form #staffForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="border1 paddin5px">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Id</label>
+          <input type="number" class="form-control" [(ngModel)]="newStaff.id" name="id"
+                 placeholder="Id will be created automatically">
+        </div>
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="newStaff.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" class="form-control" [(ngModel)]="newStaff.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+          <label>Origin</label>
+          <input type="text" class="form-control" [(ngModel)]="newStaff.origin" name="origin">
+        </div>
+        <div class="form-group">
+          <label>Birth date</label>
+          <input type="date" class="form-control" [(ngModel)]="newStaff.birthDate" name="birthDate">
+        </div>
+        <div class="form-group">
+          <label>Status <br></label>
+          <select required
+                  #status="ngModel"
+                  name="status" id=""
+                  class="custom-select"
+                  [(ngModel)]="newStaff.status"
+                  [class.is-invalid]="status.invalid && status.touched">
+            <option  selected value="{{sofp}}">Select the status</option>
+            <option >{{statuss[0]}}</option>
+            <option >{{statuss[1]}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Role <br></label>
+          <select required
+                  #role="ngModel"
+                  name="role" id="role"
+                  class="custom-select"
+                  [(ngModel)]="newStaff.role"
+                  [class.is-invalid]="role.invalid && role.touched">
+            <option >{{rol[0]}}</option>
+            <option >{{rol[1]}}</option>
+            <option >{{rol[2]}}</option>
+            <option >{{rol[3]}}</option>
+            <option >{{rol[4]}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div ngModelGroup="department">
+          <div class="form-group">
+            <label>Department Id</label>
+            <input type="number" class="form-control" [(ngModel)]="newStaff.department.id" name="id"    placeholder="Id will be created automatically">
+          </div>
+          <div class="form-group">
+            <label>Department name</label>
+            <input type="text" class="form-control" [(ngModel)]="newStaff.department.name" name="name">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div ngModelGroup="contact">
+          <div class="form-group">
+            <label>Contact Id </label>
+            <input type="number" class="form-control" [(ngModel)]="newStaff.contact.id" name="id"    placeholder="Id will be created automatically">
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" class="form-control" [(ngModel)]="newStaff.contact.email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Mobile Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="newStaff.contact.mobile" name="mobile">
+          </div>
+          <div ngModelGroup="adress">
+            <div class="form-group">
+              <label>Adress id</label>
+              <input type="number" class="form-control" [(ngModel)]="newStaff.contact.adress.id" name="id"    placeholder="Id will be created automatically">
+            </div>
+            <div class="form-group">
+              <label>Street</label>
+              <input type="text" class="form-control" [(ngModel)]="newStaff.contact.adress.street" name="street">
+            </div>
+            <div class="form-group">
+              <label>Number</label>
+              <input type="text" class="form-control" [(ngModel)]="newStaff.contact.adress.number" name="number">
+            </div>
+            <div class="form-group">
+              <label>Zip code</label>
+              <input type="text" class="form-control" [(ngModel)]="newStaff.contact.adress.zipCode" name="zipCode">
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" class="form-control" [(ngModel)]="newStaff.contact.adress.city" name="city">
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <input type="text" class="form-control" [(ngModel)]="newStaff.contact.adress.country" name="country">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit the new member</button>
+  </form>
+
+</div>
+
+<app-footer></app-footer>

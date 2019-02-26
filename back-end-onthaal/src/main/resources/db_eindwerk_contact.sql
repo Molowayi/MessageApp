@@ -1,0 +1,10 @@
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '+33477737857', 1);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '477737857', 2);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '+33477737857', 3);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '477737857', 4);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '477737857', 5);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('Ferninho@gmail.com', '555 567 213 444', 6);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '+33477737857', 7);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '+31477737857', 8);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '+31477737857', 9);
+INSERT INTO db_eindwerk.contact (email, mobile, adress) VALUES ('molowayi@gmail.com', '477737857', 10);

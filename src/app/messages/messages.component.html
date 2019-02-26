@@ -1,0 +1,95 @@
+<div class="container">
+
+  <h2 class="centrerText">Add a new message</h2>
+  <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+  <form #messageForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label>Message Id</label>
+      <input type="number" class="form-control" [(ngModel)]="newMessage.id" name="id"
+             placeholder="Id will be created automatically">
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" class="form-control" [(ngModel)]="newMessage.postTime" name="postTime">
+    </div>
+
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" [(ngModel)]="newMessage.title" name="title">
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <!--<input type="textarea" class="form-control" [(ngModel)]="newMessage.content" name="origin">-->
+      <textarea type="textarea" class="form-control" [(ngModel)]="newMessage.content" name="content">Content</textarea>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div ngModelGroup="sender">
+
+          <div class="form-group">
+            <label>Select de sender <br></label>
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.receiver.firstName"-->
+            <!--name="firstName">-->
+            <select name="firstName" id="sender" #the_sender class="custom-select" [(ngModel)]="newMessage.sender.id">
+              <option *ngFor="let person of people" value="{{person.id}}">{{person.firstName}} {{person.lastName | uppercase }}</option>
+            </select>
+          </div>
+
+          <!--<div class="form-group">-->
+            <!--<label>Sender Id</label>-->
+            <!--<input type="number" class="form-control" [(ngModel)]="newMessage.sender.id" name="id">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Sender first name</label>-->
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.sender.firstName" name="firstName">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Sender last name</label>-->
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.sender.lastName" name="lastName">-->
+          <!--</div>-->
+          <div class="form-group">
+            <label>Sender status</label>
+            <input type="text" class="form-control" [(ngModel)]="newMessage.sender.status" name="status">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div ngModelGroup="receiver">
+          <div class="form-group">
+            <label>Select de receiver <br></label>
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.receiver.firstName"-->
+            <!--name="firstName">-->
+            <select name="firstName" id="receiver" #the_receiver class="custom-select"
+                    [(ngModel)]="newMessage.receiver.id">
+              <option *ngFor="let person of people" value="{{person.id}}">{{person.firstName}} {{person.lastName
+                | uppercase }}
+              </option>
+            </select>
+          </div>
+          <!--<div class="form-group">-->
+            <!--<label>Receiver Id</label>-->
+            <!--<input type="number" class="form-control" [(ngModel)]="newMessage.receiver.id" name="id">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Receiver first name</label>-->
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.receiver.firstName"-->
+                   <!--name="firstName">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label>Receiver last name</label>-->
+            <!--<input type="text" class="form-control" [(ngModel)]="newMessage.receiver.lastName" name="lastName">-->
+          <!--</div>-->
+          <div class="form-group">
+            <label>Receiver status</label>
+            <input type="text" class="form-control" [(ngModel)]="newMessage.receiver.status" name="status">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit the new message</button>
+  </form>
+</div>
+
+<app-footer></app-footer>
+

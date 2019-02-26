@@ -1,0 +1,105 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+
+# compiled output
+
+/dist
+
+/tmp
+
+/out-tsc
+
+
+
+# dependencies
+
+/node_modules
+
+
+
+# IDEs and editors
+
+/.idea
+
+.project
+
+.classpath
+
+.c9/
+
+*.launch
+
+.settings/
+
+*.sublime-workspace
+
+
+
+# IDE - VSCode
+
+.vscode/*
+
+!.vscode/settings.json
+
+!.vscode/tasks.json
+
+!.vscode/launch.json
+
+!.vscode/extensions.json
+
+
+
+# misc
+
+/.sass-cache
+
+/connect.lock
+
+/coverage
+
+/libpeerconnection.log
+
+npm-debug.log
+
+yarn-error.log
+
+testem.log
+
+/typings
+
+
+
+# System Files
+
+.DS_Store
+
+Thumbs.db
+
+# EMBEDED BACK END
+
+/back-end-onthaal/target/
+/back-end-onthaal/!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+/back-end-onthaal/.apt_generated
+/back-end-onthaal/.classpath
+/back-end-onthaal/.factorypath
+/back-end-onthaal/.project
+/back-end-onthaal/.settings
+/back-end-onthaal/.springBeans
+/back-end-onthaal/.sts4-cache
+
+### IntelliJ IDEA ###
+/back-end-onthaal/.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/back-end-onthaal/nbproject/private/
+/back-end-onthaal/build/
+/back-end-onthaal/nbbuild/
+/back-end-onthaal/dist/
+/back-end-onthaal/nbdist/
+/back-end-onthaal/.nb-gradle/
+

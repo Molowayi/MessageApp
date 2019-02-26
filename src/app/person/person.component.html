@@ -1,0 +1,26 @@
+<div class="container">
+  <h3 class="paddingBottom30">List of all the people</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+        <th>School</th>
+        <th>Role</th>
+      </tr>
+      <tr *ngFor="let person of people">
+        <td>{{person.id}}</td>
+        <td>{{person.firstName | titlecase }}</td>
+        <td>{{person.lastName | uppercase}}</td>
+        <td>{{person.origin}}</td>
+        <td>{{person.school}}</td>
+        <td>{{person.role | titlecase }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

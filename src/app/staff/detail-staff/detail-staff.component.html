@@ -1,0 +1,154 @@
+<div class="container" id="object_staff">
+  <h3 class="paddingBottom30">{{object_staff.firstName | titlecase}} {{object_staff.lastName | uppercase }}</h3>
+  <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+  <form #object_staffForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="border1 paddin5px">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Id</label>
+          <input type="number" class="form-control" [(ngModel)]="object_staff.id" name="id"
+                 placeholder="Id will be created automatically">
+        </div>
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="object_staff.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" class="form-control" [(ngModel)]="object_staff.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+          <label>Origin</label>
+          <input type="text" class="form-control" [(ngModel)]="object_staff.origin" name="origin">
+        </div>
+        <div class="form-group">
+          <label>Birth date</label>
+          <input type="date" class="form-control" [(ngModel)]="object_staff.birthDate" name="birthDate">
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <input type="text" class="form-control" [(ngModel)]="object_staff.status" name="status">
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <input type="text" class="form-control" [(ngModel)]="object_staff.role" name="role">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div ngModelGroup="department">
+          <div class="form-group">
+            <label>Department Id</label>
+            <input type="number" class="form-control" [(ngModel)]="object_staff.department.id" name="id"    placeholder="Id will be created automatically">
+          </div>
+          <div class="form-group">
+            <label>Department name</label>
+            <input type="text" class="form-control" [(ngModel)]="object_staff.department.name" name="name">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div ngModelGroup="contact">
+          <div class="form-group">
+            <label>Contact Id </label>
+            <input type="number" class="form-control" [(ngModel)]="object_staff.contact.id" name="id"    placeholder="Id will be created automatically">
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" class="form-control" [(ngModel)]="object_staff.contact.email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Mobile Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="object_staff.contact.mobile" name="mobile">
+          </div>
+          <div ngModelGroup="adress">
+            <div class="form-group">
+              <label>Adress id</label>
+              <input type="number" class="form-control" [(ngModel)]="object_staff.contact.adress.id" name="id"    placeholder="Id will be created automatically">
+            </div>
+            <div class="form-group">
+              <label>Street</label>
+              <input type="text" class="form-control" [(ngModel)]="object_staff.contact.adress.street" name="street">
+            </div>
+            <div class="form-group">
+              <label>Number</label>
+              <input type="text" class="form-control" [(ngModel)]="object_staff.contact.adress.number" name="number">
+            </div>
+            <div class="form-group">
+              <label>Zip code</label>
+              <input type="text" class="form-control" [(ngModel)]="object_staff.contact.adress.zipCode" name="zipCode">
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" class="form-control" [(ngModel)]="object_staff.contact.adress.city" name="city">
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <input type="text" class="form-control" [(ngModel)]="object_staff.contact.adress.country" name="country">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+  <h3>Received messages</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr *ngFor="let message of received_messages">
+        <td>
+          <p class="alignright"><a routerLink="/detail_message/{{message[4]}}">Details</a></p>
+          <p>
+            <strong>({{message[4]}}) {{message[5]}}</strong></p>
+          <p> {{message[6]}}</p>
+          <small>
+            <div *ngIf="message[3]==='STUDENT'">From :
+              <a routerLink="/student_detail/id/{{message[2]}}">
+                <i>{{message[0]}} {{message[1]}}</i><br>
+              </a>
+            </div>
+            <div *ngIf="message[3]==='STAFF'">From :
+              <a routerLink="/staff_detail/id/{{message[2]}}">
+                <i>{{message[0]}} {{message[1]}}</i><br>
+              </a>
+            </div>
+            <i>Date : {{message[7] | date:'yyyy-MM-dd'}}</i>
+          </small>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>Sent messages</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr *ngFor="let message of sent_messages">
+        <td>
+          <p class="alignright"><a routerLink="/detail_message/{{message[1]}}">Details</a></p>
+          <p>
+            <strong>({{message[1]}}) {{message[2]}}</strong></p>
+          <p> {{message[3]}}</p>
+          <small>
+            <div *ngIf="message[8]==='STUDENT'">To :
+              <a routerLink="/student_detail/id/{{message[7]}}">
+                <i>{{message[5]}} {{message[6]}}</i><br>
+              </a>
+            </div>
+            <div *ngIf="message[8]==='STAFF'">To :
+              <a routerLink="/staff_detail/id/{{message[7]}}">
+                <i>{{message[5]}} {{message[6]}}</i><br>
+              </a>
+            </div>
+            <i>Date : {{message[4] | date:'yyyy-MM-dd'}}</i>
+          </small>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
