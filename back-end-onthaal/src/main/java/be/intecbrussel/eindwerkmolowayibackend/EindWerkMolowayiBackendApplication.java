@@ -114,7 +114,7 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
     Person person5 = staffRepository.save(new Staff("Jane", "Doe", "Belgium", Person.timestampFromAge(29), StatusOfThePerson.STAFF, contact5, null, null, Role.MAINTENANCE, departement2));
 
     //Creating 3 messages
-    
+
     Person sender = personDAO.getPersonById(1L);
     Person receiver = personDAO.getPersonById(2L);
 
@@ -125,28 +125,28 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
       sender,
       receiver);
     messageDAO.save(message);
-    
+
     sender = personDAO.getPersonById(1L);
     receiver = personDAO.getPersonById(4L);
 
-    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    Message message = new Message(timestamp,
+    timestamp = new Timestamp(System.currentTimeMillis());
+    message = new Message(timestamp,
       "Message from 1 to 4",
       "Dude, how are you?",
       sender,
       receiver);
-    messageDAO.save(message);        
-    
+    messageDAO.save(message);
+
     sender = personDAO.getPersonById(4L);
     receiver = personDAO.getPersonById(1L);
 
-    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    Message message = new Message(timestamp,
+    timestamp = new Timestamp(System.currentTimeMillis());
+    message = new Message(timestamp,
       "4 answers to 1",
       "Fine, thanks for your message. Where can I find Lorem Ipsum?",
       sender,
       receiver);
-    messageDAO.save(message);  
+    messageDAO.save(message);
   }
 }
 
