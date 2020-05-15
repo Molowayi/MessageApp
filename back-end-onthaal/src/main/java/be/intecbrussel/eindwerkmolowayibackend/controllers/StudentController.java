@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class StudentController {
   @Autowired
   RoomRepository roomRepository;
 
+  @Secured("ROLE_ADMIN")
   @PostMapping(value = "/student", produces = "application/json", consumes = "application/json")
   public Student createStudent(@RequestBody Student student) {
     Optional<Room> optionalRoom = roomRepository.findById(student.getRoom().getId());
@@ -46,7 +48,7 @@ public class StudentController {
     }
     return new ResponseEntity<>(student, status);
   }
-
+  @Secured("ROLE_ADMIN")
   @PutMapping(value = "/student/{id}", produces = "application/json")
   public ResponseEntity<Student> updateStudent(@PathVariable(value = "id") Long studentid, @RequestBody Student studentDetails) {
     Student student = studentDAO.findOne(studentid);
@@ -70,6 +72,7 @@ public class StudentController {
     return ResponseEntity.ok().body(updateStudent);
   }
 
+  @Secured("ROLE_ADMIN")
   @DeleteMapping(value = "/student/{id}", produces = "application/json")
   public ResponseEntity<Student> deleteStudent(@PathVariable(value = "id") Long studentid) {
     Student student = studentDAO.findOne(studentid);

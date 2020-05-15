@@ -3,10 +3,11 @@ package be.intecbrussel.eindwerkmolowayibackend.model;
 import javax.persistence.Entity;
 import java.io.Serializable;
 
-import com.sun.istack.internal.NotNull;
+// import com.sun.istack.internal.NotNull;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity

@@ -8,6 +8,7 @@ import be.intecbrussel.eindwerkmolowayibackend.model.Staff;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class StaffController {
   @Autowired
   DepartmentRepository departmentRepository;
 
+  @Secured("ROLE_ADMIN")
   @PostMapping(value = "/staff", produces = "application/json")
   public Staff createStaff(@RequestBody Staff staff) {
     System.out.println(staff);
@@ -50,6 +52,7 @@ public class StaffController {
     return new ResponseEntity<>(staff, status);
   }
 
+  @Secured("ROLE_ADMIN")
   @PutMapping(value = "/staff/{id}", produces = "application/json")
   public ResponseEntity<Staff> updateStaff(@PathVariable(value = "id") Long staffid, @RequestBody Staff staffDetails) {
 
@@ -73,6 +76,7 @@ public class StaffController {
     return ResponseEntity.ok().body(updateStaff);
   }
 
+  @Secured("ROLE_ADMIN")
   @DeleteMapping(value = "/staff/{id}", produces = "application/json")
   public ResponseEntity<Staff> deleteStaff(@PathVariable(value = "id") Long id) {
 

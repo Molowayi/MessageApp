@@ -8,6 +8,7 @@ import be.intecbrussel.eindwerkmolowayibackend.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class MessageController {
   PersonRepository personRepository;
   PersonDAO personDAO;
 
+  @Secured("ROLE_ADMIN")
   @PostMapping(value = "/message", produces = "application/json")
   public Message createMessage(@RequestBody Message message) {
     System.out.println(message);
@@ -136,6 +138,7 @@ public class MessageController {
     return new ResponseEntity<>(message, HttpStatus.OK);
   }
 
+  @Secured("ROLE_ADMIN")
   @PutMapping(value = "/message/{id}", produces = "application/json")
   public ResponseEntity<Message> updateMessage(@PathVariable(value = "id") Long messageid, @RequestBody Message messageDetails) {
 
@@ -155,6 +158,7 @@ public class MessageController {
 
   }
 
+  @Secured("ROLE_ADMIN")
   @DeleteMapping("/message/{id}")
   public ResponseEntity<Message> deleteMessage(@PathVariable(value = "id") Long messageid) {
 
