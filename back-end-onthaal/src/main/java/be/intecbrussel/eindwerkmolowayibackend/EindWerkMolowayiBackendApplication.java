@@ -7,6 +7,8 @@ import be.intecbrussel.eindwerkmolowayibackend.datLayer.ContactRepository;
 import be.intecbrussel.eindwerkmolowayibackend.datLayer.StaffRepository;
 import be.intecbrussel.eindwerkmolowayibackend.datLayer.StudentRepository;
 import be.intecbrussel.eindwerkmolowayibackend.model.*;
+import be.intecbrussel.eindwerkmolowayibackend.security.User;
+import be.intecbrussel.eindwerkmolowayibackend.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -71,6 +73,8 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
   StudentRepository studentRepository;
   @Autowired
   StaffRepository staffRepository;
+  @Autowired
+  UserRepository userRepository;
 
   @Autowired
   PersonDAO personDAO;
@@ -147,6 +151,12 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
       sender,
       receiver);
     messageDAO.save(message);
+
+    User firstUser = new User("john", "123", true, "ADMIN");
+    User secondUser = new User("jack", "123", true, "USER");
+    userRepository.save(firstUser);
+    userRepository.save(secondUser);
+
   }
 }
 
