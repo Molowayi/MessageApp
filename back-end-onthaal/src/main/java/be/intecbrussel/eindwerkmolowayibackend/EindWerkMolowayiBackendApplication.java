@@ -31,7 +31,7 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
   public static void main(String[] args) {
     SpringApplication.run(EindWerkMolowayiBackendApplication.class, args);
   }
-
+/*
   @Bean
   public WebSecurityConfigurer<WebSecurity> securityConfigurer() {
     return new WebSecurityConfigurerAdapter() {
@@ -61,6 +61,10 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
       }
     };
   }
+
+
+*/
+
 
   /*
       =========== INITIAL DATA =============
