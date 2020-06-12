@@ -24,6 +24,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.sql.Timestamp;
+import java.util.Optional;
 
 @SpringBootApplication
 @EnableGlobalMethodSecurity(securedEnabled = true)
@@ -162,6 +163,8 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
     User secondUser = new User("jack", "123", true, "USER");
     userRepository.save(firstUser);
     userRepository.save(secondUser);
+    Optional<User> fetchedUser = userRepository.findByUserName("john");
+    System.out.println(fetchedUser);
 
   }
 }

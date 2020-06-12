@@ -10,7 +10,7 @@
 
         <li class="active"><a routerLink="/welcome">Home</a></li>
 
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Students <span
+        <li class="dropdown" *ngIf="loginService.isUserLoggedIn()"><a class="dropdown-toggle" data-toggle="dropdown" >Students <span
           class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/list_students">List students</a></li>
@@ -20,7 +20,7 @@
           </ul>
         </li>
 
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Staff Members<span
+        <li class="dropdown" *ngIf="loginService.isUserLoggedIn()" ><a class="dropdown-toggle" data-toggle="dropdown" >Staff Members<span
           class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/list_staff">List of the staff members</a></li>
@@ -30,7 +30,7 @@
           </ul>
         </li>
 
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >All the people <span
+        <li class="dropdown"  *ngIf="loginService.isUserLoggedIn()" ><a class="dropdown-toggle" data-toggle="dropdown" >All the people <span
           class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/people">List of the all the people</a></li>
@@ -41,7 +41,7 @@
           </ul>
         </li>
 
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Messages <span
+        <li class="dropdown" *ngIf="loginService.isUserLoggedIn()"><a class="dropdown-toggle" data-toggle="dropdown" >Messages <span
           class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/messages">Add new message</a></li>
@@ -50,6 +50,8 @@
             <li><a routerLink="/list_messages">Archive a message</a></li>
           </ul>
         </li>
+        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
       </ul>
       <form class="navbar-form navbar-left" (ngSubmit)="search()">
         <div class="input-group">

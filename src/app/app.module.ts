@@ -25,21 +25,28 @@ import { ListStaffComponent } from './staff/list-staff/list-staff.component';
 import { StudentDetailsComponent } from './student/student-details/student-details.component';
 import { DetailStaffComponent } from './staff/detail-staff/detail-staff.component';
 import { DetailmessageComponent } from './messages/detailmessage/detailmessage.component';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGaurdService } from './services/auth-gaurd.service';
+
+
 
 const appRoutes: Routes = [
-  {path: 'welcome', component: WelcomeComponent},
-  {path: 'students', component: StudentComponent},
-  {path: 'list_students', component: ListStudentComponent},
-  {path: 'student_detail/id/:id', component: StudentDetailsComponent},
-  {path: 'staff', component: StaffComponent},
-  {path: 'staff_detail/id/:id', component: DetailStaffComponent},
-  {path: 'list_staff', component: ListStaffComponent},
-  {path: 'messages', component: MessagesComponent},
-  {path: 'list_messages', component: ListmessagesComponent},
-  {path: 'list_messages/page/:p/of/:n', component: ListmessagesComponent},
-  {path: 'detail_message/:id', component: DetailmessageComponent},
-  {path: 'people', component: PersonComponent},
+  {path: 'welcome', component: WelcomeComponent,canActivate:[AuthGaurdService] },
+  {path: 'students', component: StudentComponent,canActivate:[AuthGaurdService] },
+  {path: 'list_students', component: ListStudentComponent,canActivate:[AuthGaurdService] },
+  {path: 'student_detail/id/:id', component: StudentDetailsComponent,canActivate:[AuthGaurdService] },
+  {path: 'staff', component: StaffComponent,canActivate:[AuthGaurdService] },
+  {path: 'staff_detail/id/:id', component: DetailStaffComponent,canActivate:[AuthGaurdService] },
+  {path: 'list_staff', component: ListStaffComponent,canActivate:[AuthGaurdService] },
+  {path: 'messages', component: MessagesComponent,canActivate:[AuthGaurdService] },
+  {path: 'list_messages', component: ListmessagesComponent,canActivate:[AuthGaurdService] },
+  {path: 'list_messages/page/:p/of/:n', component: ListmessagesComponent,canActivate:[AuthGaurdService] },
+  {path: 'detail_message/:id', component: DetailmessageComponent,canActivate:[AuthGaurdService] },
+  {path: 'people', component: PersonComponent,canActivate:[AuthGaurdService] },
   {path: '', redirectTo: '/welcome', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]  },
   {path: '**', redirectTo: '/welcome', pathMatch: 'full'}
 ];
 
@@ -60,7 +67,9 @@ const appRoutes: Routes = [
     ListStaffComponent,
     StudentDetailsComponent,
     DetailStaffComponent,
-    DetailmessageComponent
+    DetailmessageComponent,
+ LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

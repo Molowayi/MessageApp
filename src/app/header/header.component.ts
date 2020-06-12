@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   today = Date.now();
-  constructor() { }
+  constructor(private loginService:AuthenticationService) { }
 
   ngOnInit() {
   }
+  
   search(){
     
   }
