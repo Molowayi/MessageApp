@@ -164,7 +164,9 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
     userRepository.save(firstUser);
     userRepository.save(secondUser);
     Optional<User> fetchedUser = userRepository.findByUserName("john");
+    Optional<User> fetchedUser2 = userRepository.findByUserName("jack");
     System.out.println(fetchedUser);
+    System.out.println(fetchedUser2);
 
   }
 }
