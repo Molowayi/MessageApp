@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.csrf().disable()
       .authorizeRequests().
-      antMatchers("/ngo/authenticate").permitAll().
+      antMatchers("/ngo/authenticate", "/ngo/register").permitAll().
       antMatchers(HttpMethod.OPTIONS, "/**").permitAll().
       anyRequest().authenticated().and().
       exceptionHandling()

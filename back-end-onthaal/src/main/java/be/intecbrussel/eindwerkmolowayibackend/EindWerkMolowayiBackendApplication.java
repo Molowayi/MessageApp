@@ -159,14 +159,15 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
       receiver);
     messageDAO.save(message);
 
-    User firstUser = new User("john", "123", true, "ADMIN");
-    User secondUser = new User("jack", "123", true, "USER");
-    userRepository.save(firstUser);
-    userRepository.save(secondUser);
-    Optional<User> fetchedUser = userRepository.findByUserName("john");
-    Optional<User> fetchedUser2 = userRepository.findByUserName("jack");
-    System.out.println(fetchedUser);
-    System.out.println(fetchedUser2);
+    // Creating two initial users. But not anymore useful because it is now possible to register an admin user 
+//    User firstUser = new User("john", "123", true, "ADMIN");
+//    User secondUser = new User("jack", "123", true, "USER");
+//    userRepository.save(firstUser);
+//    userRepository.save(secondUser);
+//    Optional<User> fetchedUser = userRepository.findByUserName("john");
+//    Optional<User> fetchedUser2 = userRepository.findByUserName("jack");
+//    System.out.println(fetchedUser);
+//    System.out.println(fetchedUser2);
 
   }
 }

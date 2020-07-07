@@ -3,14 +3,18 @@ package be.intecbrussel.eindwerkmolowayibackend.security;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(
+        name="User", 
+        uniqueConstraints=
+            @UniqueConstraint(columnNames={"userName"})
+    )
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
   private String userName;
   private String password;
-  private boolean active;
+  private boolean active ;
   private String roles;
 
   public User() {
