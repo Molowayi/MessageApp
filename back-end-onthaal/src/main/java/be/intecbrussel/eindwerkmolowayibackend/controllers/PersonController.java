@@ -1,11 +1,8 @@
 package be.intecbrussel.eindwerkmolowayibackend.controllers;
 
 import be.intecbrussel.eindwerkmolowayibackend.daos.PersonDAO;
-import be.intecbrussel.eindwerkmolowayibackend.daos.StudentDAO;
 import be.intecbrussel.eindwerkmolowayibackend.model.Adress;
 import be.intecbrussel.eindwerkmolowayibackend.model.Person;
-import be.intecbrussel.eindwerkmolowayibackend.model.Student;
-
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -32,8 +28,8 @@ public class PersonController {
 	@GetMapping(value = "/person", produces = "application/json")
 	public List<Person> getPersonByLastName(@RequestParam(required = false) String lastname) {
 
-		if(lastname ==null) {
-			return  personDAO.findAll();
+		if (lastname == null) {
+			return personDAO.findAll();
 		}
 		return personDAO.findPersonByLastName(lastname);
 	}
@@ -46,8 +42,8 @@ public class PersonController {
 
 	@GetMapping(value = "/person/{id}", produces = "application/json")
 	public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long id) {
-LOGGER.info("Logger Name: "+LOGGER.getName());
-LOGGER.warn("getPersonById");	
+		LOGGER.info("Logger Name: " + LOGGER.getName());
+		LOGGER.warn("getPersonById");
 		HttpStatus status = HttpStatus.OK;
 		Person person = personDAO.getPersonById(id);
 

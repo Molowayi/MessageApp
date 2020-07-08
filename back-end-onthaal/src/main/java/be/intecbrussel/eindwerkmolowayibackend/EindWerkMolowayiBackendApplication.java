@@ -112,8 +112,6 @@ public class EindWerkMolowayiBackendApplication implements CommandLineRunner {
 
     Department departement1 = new Department("CLEANING");
     Department departement2 = new Department("ADMINISTRATION");
-    Department departement3 = new Department("ACOUNTING");
-
     Room room1 = new Room("1001", Funktion.SLEEPROOM, null);
     Room room2 = new Room("1101", Funktion.SLEEPROOM, null);
     Room room3 = new Room("1102", Funktion.SLEEPROOM, null);

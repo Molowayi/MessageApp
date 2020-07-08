@@ -1,6 +1,5 @@
 package be.intecbrussel.eindwerkmolowayibackend.model;
 
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.stereotype.Component;
 
@@ -11,64 +10,62 @@ import java.util.List;
 @Entity
 @Component
 public class Room implements IRoom, Serializable {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
-  private String number;
-  @Enumerated(EnumType.STRING)
-  private Funktion function;
 
-  @JsonManagedReference
-  @OneToMany(mappedBy = "room", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
-  private List<Student> tenants;
+	private static final long serialVersionUID = 1816937269599636819L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String number;
+	@Enumerated(EnumType.STRING)
+	private Funktion function;
 
-  public Room() {
-  }
+	@JsonManagedReference
+	@OneToMany(mappedBy = "room", fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST })
+	private List<Student> tenants;
 
-  public Room(String number, Funktion function, List<Student> tenants) {
-    this.number = number;
-    this.function = function;
-    this.tenants = tenants;
-  }
+	public Room() {
+	}
 
-  public long getId() {
-    return id;
-  }
+	public Room(String number, Funktion function, List<Student> tenants) {
+		this.number = number;
+		this.function = function;
+		this.tenants = tenants;
+	}
 
-  public void setId(long id) {
-    this.id = id;
-  }
+	public long getId() {
+		return id;
+	}
 
-  public String getNumber() {
-    return number;
-  }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-  public void setNumber(String number) {
-    this.number = number;
-  }
+	public String getNumber() {
+		return number;
+	}
 
-  public Funktion getFunction() {
-    return function;
-  }
+	public void setNumber(String number) {
+		this.number = number;
+	}
 
-  public void setFunction(Funktion function) {
-    this.function = function;
-  }
+	public Funktion getFunction() {
+		return function;
+	}
 
-  public List<Student> getTenants() {
-    return tenants;
-  }
+	public void setFunction(Funktion function) {
+		this.function = function;
+	}
 
-  public void setTenants(List<Student> tenants) {
-    this.tenants = tenants;
-  }
+	public List<Student> getTenants() {
+		return tenants;
+	}
 
-  @Override
-  public String toString() {
-    return "Room{" +
-      "id=" + id +
-      ", number='" + number + '\'' +
-      ", function=" + function +
-      '}';
-  }
+	public void setTenants(List<Student> tenants) {
+		this.tenants = tenants;
+	}
+
+	@Override
+	public String toString() {
+		return "Room{" + "id=" + id + ", number='" + number + '\'' + ", function=" + function + '}';
+	}
 }
