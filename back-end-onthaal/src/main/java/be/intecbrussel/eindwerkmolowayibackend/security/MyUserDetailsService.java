@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	private PasswordEncoder bcryptEncoder;
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -29,8 +33,7 @@ public class MyUserDetailsService implements UserDetailsService {
 		
 		User newUser = new User();
 		newUser.setUserName(user.getUsername());
-		// TODO Use BCrypt for the password
-		newUser.setPassword((user.getPassword()));
+		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setActive(true);
 		newUser.setRoles("ADMIN");
 		newUser = userRepository.save(newUser);
