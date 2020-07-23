@@ -20,6 +20,17 @@ export class JwtResponse{
   providedIn: 'root'
 })
 export class AuthenticationService {
+  
+  register(username: string, password: string) {
+
+    return this.httpClient.post<any>('http://localhost:8080/register',{username,password}).pipe(
+      map(
+        userData => {
+          
+        }
+      )
+ 
+     );  }
 
   constructor(
     private httpClient:HttpClient

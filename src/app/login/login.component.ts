@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   username = ''
   password = ''
   invalidLogin = false
+  registrationError: string = "";
+  nowLogin: string = "";
 
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
@@ -28,6 +30,20 @@ export class LoginComponent implements OnInit {
       error => {
         this.invalidLogin = true
 
+      }
+    )
+    );
+
+  }
+
+  register(){
+    
+    (this.loginservice.register(this.username, this.password).subscribe(
+      data => {
+          this.nowLogin = "Now you can login"
+      },
+      error => {
+        this.registrationError = "There was an error. Registration failed."
       }
     )
     );
