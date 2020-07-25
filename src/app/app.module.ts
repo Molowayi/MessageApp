@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AdressComponent} from './adress/adress.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {PersonComponent} from './person/person.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -28,6 +28,7 @@ import { DetailmessageComponent } from './messages/detailmessage/detailmessage.c
 import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
+import { JwtAuthHtppInterceptorService } from './service/jwt-auth-interceptor-service.service';
 
 
 
@@ -77,8 +78,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [Room, Contact, Addres, Department, Person, ServiceforallService],
+  providers: [Room, Contact, Addres, Department, Person, ServiceforallService,   {  
+    provide:HTTP_INTERCEPTORS, useClass:JwtAuthHtppInterceptorService, multi:true 
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

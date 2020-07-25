@@ -5,5 +5,10 @@
   </div>
   <button (click)=checkLogin() class="btn btn-success">
     Login
-  </button>
+  </button><label [(ngModel)]="nowLogin" class="red bold"></label>
+  <p>or</p>
+
+  <button (click)=register() class="btn btn-success">
+    Register
+  </button><label [(ngModel)]="registrationEroor" class="red bold"></label>
 </div>
