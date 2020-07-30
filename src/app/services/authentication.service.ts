@@ -23,7 +23,7 @@ export class AuthenticationService {
   
   register(username: string, password: string) {
 
-    return this.httpClient.post<any>('http://localhost:8080/register',{username,password}).pipe(
+    return this.httpClient.post<any>('http://localhost:8080/ngo/register',{username,password}).pipe(
       map(
         userData => {
           
@@ -38,7 +38,7 @@ export class AuthenticationService {
      }
 
      authenticate(username, password) {
-      return this.httpClient.post<any>('http://localhost:8080/authenticate',{username,password}).pipe(
+      return this.httpClient.post<any>('http://localhost:8080/ngo/authenticate',{username,password}).pipe(
        map(
          userData => {
           sessionStorage.setItem('username',username);

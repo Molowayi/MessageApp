@@ -28,7 +28,7 @@ import { DetailmessageComponent } from './messages/detailmessage/detailmessage.c
 import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
-import { JwtAuthHtppInterceptorService } from './service/jwt-auth-interceptor-service.service';
+import { JwtAuthHtppInterceptorService } from './services/jwt-auth-interceptor-service.service';
 
 
 
