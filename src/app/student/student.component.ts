@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from '../model/student';
+import {Student} from '../model/model.student';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Room} from '../model/room';
-import {Addres} from '../model/addres';
-import {Contact} from '../model/contact';
-import {Funktion} from '../model/funktion';
-import {StatusOfThePerson} from '../model/status-of-the-person';
+import {Room} from '../model/model.room';
+import {Addres} from '../model/model.addres';
+import {Contact} from '../model/model.contact';
+import {Funktion} from '../model/model.funktion';
+import {StatusOfThePerson} from '../model/model.status-of-the-person';
 import {ServiceforallService} from '../services/serviceforall.service';
 import {Router} from '@angular/router';
 

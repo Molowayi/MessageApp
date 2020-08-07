@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
-import {Message} from '../../model/message';
+import {Message} from '../../model/model.message';
 import {ServiceforallService} from '../../services/serviceforall.service';
 import {ActivatedRoute} from '@angular/router';
 

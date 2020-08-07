@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Person} from '../model/person';
+import {Person} from '../model/model.person';
 import {ServiceforallService} from '../services/serviceforall.service';
 
 

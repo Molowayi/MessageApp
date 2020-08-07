@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Message} from '../model/message';
+import {Message} from '../model/model.message';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Person} from '../model/person';
+import {Person} from '../model/model.person';
 import {ServiceforallService} from '../services/serviceforall.service';
-import {Student} from '../model/student';
-import {StatusOfThePerson} from '../model/status-of-the-person';
-import {Staff} from '../model/staff';
+import {Student} from '../model/model.student';
+import {StatusOfThePerson} from '../model/model.status-of-the-person';
+import {Staff} from '../model/model.staff';
 
 @Component({
   selector: 'app-messages',

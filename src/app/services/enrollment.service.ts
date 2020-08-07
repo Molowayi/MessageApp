@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Addres} from '../model/Addres';
+import {Addres} from '../model/model.addres';
 import {throwError} from 'rxjs/index';
 import {catchError} from 'rxjs/internal/operators';
 

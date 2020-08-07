@@ -12,11 +12,11 @@ import {StaffComponent} from './staff/staff.component';
 import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {MessagesComponent} from './messages/messages.component';
-import {Room} from './model/room';
-import {Contact} from './model/contact';
-import {Addres} from './model/addres';
-import {Department} from './model/department';
-import {Person} from './model/person';
+import {Room} from './model/model.room';
+import {Contact} from './model/model.contact';
+import {Addres} from './model/model.addres';
+import {Department} from './model/model.department';
+import {Person} from './model/model.person';
 import {ServiceforallService} from './services/serviceforall.service';
 import { ListMessagesComponent } from './list-messages/list-messages.component';
 import { ListmessagesComponent } from './messages/listmessages/listmessages.component';
@@ -78,8 +78,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [Room, Contact, Addres, Department, Person, ServiceforallService,   {  
-    provide:HTTP_INTERCEPTORS, useClass:JwtAuthHtppInterceptorService, multi:true 
+  providers: [Room, Contact, Addres, Department, Person, ServiceforallService,   {
+    provide:HTTP_INTERCEPTORS, useClass:JwtAuthHtppInterceptorService, multi:true
   }],
   bootstrap: [AppComponent]
 })

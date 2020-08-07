@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Staff} from '../model/staff';
+import {Staff} from '../model/model.staff';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {StatusOfThePerson} from '../model/status-of-the-person';
-import {Addres} from '../model/addres';
-import {Contact} from '../model/contact';
-import {Department} from '../model/department';
-import {Role} from '../model/role';
+import {StatusOfThePerson} from '../model/model.status-of-the-person';
+import {Addres} from '../model/model.addres';
+import {Contact} from '../model/model.contact';
+import {Department} from '../model/model.department';
+import {Role} from '../model/model.role';
 import {ServiceforallService} from '../services/serviceforall.service';
 
 const httpOptions = {

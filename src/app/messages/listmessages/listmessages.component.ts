@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {ServiceforallService} from '../../services/serviceforall.service';
-import {Message} from '../../model/message';
+import {Message} from '../../model/model.message';
 import {forEach} from '@angular/router/src/utils/collection';
 import {ActivatedRoute} from '@angular/router';
 

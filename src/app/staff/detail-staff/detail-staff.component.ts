@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
-import {Staff} from '../../model/staff';
+import {Staff} from '../../model/model.staff';
 import {ServiceforallService} from '../../services/serviceforall.service';
 import {ActivatedRoute} from '@angular/router';
-import {StatusOfThePerson} from '../../model/status-of-the-person';
-import {Department} from '../../model/department';
+import {StatusOfThePerson} from '../../model/model.status-of-the-person';
+import {Department} from '../../model/model.department';
 
 @Component({
   selector: 'app-detail-staff',

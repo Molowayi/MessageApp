@@ -1,5 +1,5 @@
-import {Contact} from './Contact';
-import {StatusOfThePerson} from './status-of-the-person';
+import {Contact} from './model.contact';
+import {StatusOfThePerson} from './model.status-of-the-person';
 
 export class Person {
 

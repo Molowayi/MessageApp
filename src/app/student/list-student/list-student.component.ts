@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
-import {StatusOfThePerson} from '../../model/status-of-the-person';
-import {Student} from '../../model/student';
+import {StatusOfThePerson} from '../../model/model.status-of-the-person';
+import {Student} from '../../model/model.student';
 import {ServiceforallService} from '../../services/serviceforall.service';
-import {Room} from '../../model/room';
-import {Addres} from '../../model/addres';
-import {Contact} from '../../model/contact';
+import {Room} from '../../model/model.room';
+import {Addres} from '../../model/model.addres';
+import {Contact} from '../../model/model.contact';
 
 @Component({
   selector: 'app-list-student',
@@ -31,7 +31,7 @@ export class ListStudentComponent implements OnInit {
     this.httpService.get<Student>('http://localhost:8080/ngo/student', this.httpOptions).subscribe(response => {
       this.student = response;
     });
- 
+
   }
 
 }

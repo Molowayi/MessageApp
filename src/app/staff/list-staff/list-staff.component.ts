@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {ServiceforallService} from '../../services/serviceforall.service';
-import {Staff} from '../../model/staff';
-import {StatusOfThePerson} from '../../model/status-of-the-person';
-import {Department} from '../../model/department';
-import {Addres} from '../../model/addres';
-import {Contact} from '../../model/contact';
+import {Staff} from '../../model/model.staff';
+import {StatusOfThePerson} from '../../model/model.status-of-the-person';
+import {Department} from '../../model/model.department';
+import {Addres} from '../../model/model.addres';
+import {Contact} from '../../model/model.contact';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-type': 'application/json', 'Authorization': 'Basic aG9tZXI6aG9tZXI='})

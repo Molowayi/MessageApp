@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
-import {Student} from '../../model/student';
+import {Student} from '../../model/model.student';
 import {ServiceforallService} from '../../services/serviceforall.service';
 import {ActivatedRoute} from '@angular/router';
-import {StatusOfThePerson} from '../../model/status-of-the-person';
-import {Room} from '../../model/room';
+import {StatusOfThePerson} from '../../model/model.status-of-the-person';
+import {Room} from '../../model/model.room';
 
 @Component({
   selector: 'app-student-details',

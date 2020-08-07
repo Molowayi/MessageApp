@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Funktion} from './funktion';
+import {Funktion} from './model.funktion';
 
 @Injectable()
 export class Room {

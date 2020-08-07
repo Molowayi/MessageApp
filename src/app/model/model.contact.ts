@@ -1,4 +1,4 @@
-import {Addres} from './Addres';
+import {Addres} from './model.addres';
 
 export class Contact {
   public id: number;

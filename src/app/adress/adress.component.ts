@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Addres} from '../model/addres';
+import {Addres} from '../model/model.addres';
 
 @Component({
   selector: 'app-adress',
