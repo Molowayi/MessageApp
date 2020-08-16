@@ -22,17 +22,8 @@ public class ExceptionHandlerController {
 	public ResponseEntity<String> handleException(Exception ex) {
 
 		try {
-//            Path path = Paths.get("log.log");
-//            if (Files.notExists(path)) {
-//                try {
-//                    Files.createFile(path);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            } else {
-////                Files.write(path, lines, Charset.defaultCharset(), StandardOpenOption.APPEND);
-//            }
 
+		  // LOGGING TO FILE
 			File file = new File("src/log.log");
 			FileOutputStream fos = new FileOutputStream(file);
 
@@ -46,8 +37,20 @@ public class ExceptionHandlerController {
 			logger.addHandler(handler);
 			logger.info(ex.getMessage());
 
-			// Alternative file writing
-			writeToFile = new PrintWriter(new FileWriter("file.txt", true));
+			// ALTERNATIVE FILE WRITING
+
+      //            Path path = Paths.get("log.log");
+//            if (Files.notExists(path)) {
+//                try {
+//                    Files.createFile(path);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+////                Files.write(path, lines, Charset.defaultCharset(), StandardOpenOption.APPEND);
+//            }
+
+      writeToFile = new PrintWriter(new FileWriter("file.txt", true));
 			writeToFile.println(ex.getMessage());
 
 		} catch (FileNotFoundException fnfe) {
