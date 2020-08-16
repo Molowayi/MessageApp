@@ -15,13 +15,12 @@ import java.util.logging.StreamHandler;
 @ControllerAdvice
 public class ExceptionHandlerController {
 
-	private static final Logger logger = Logger.getLogger("Onthaal back-end application");
+	private static final Logger logger = Logger.getLogger("Logger for exceptions");
 	PrintWriter writeToFile;
 
 	@ExceptionHandler
 	public ResponseEntity<String> handleException(Exception ex) {
 
-		System.out.println("Entrée dans le gestionnaire général d'exceptions.");
 		try {
 //            Path path = Paths.get("log.log");
 //            if (Files.notExists(path)) {
