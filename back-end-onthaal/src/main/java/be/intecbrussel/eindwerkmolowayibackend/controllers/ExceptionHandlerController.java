@@ -21,7 +21,7 @@ public class ExceptionHandlerController {
 	@ExceptionHandler
 	public ResponseEntity<String> handleException(Exception ex) {
 
-		System.out.println("Toto est dans le gestionnaire général d'exceptions.");
+		System.out.println("Entrée dans le gestionnaire général d'exceptions.");
 		try {
 //            Path path = Paths.get("log.log");
 //            if (Files.notExists(path)) {
@@ -53,15 +53,15 @@ public class ExceptionHandlerController {
 
 		} catch (FileNotFoundException fnfe) {
 			String exceptionMessageAndStackTrace = ex.getMessage() + "\n" + ex.getStackTrace();
+      System.out.println("Il y a eu une FileNotFoundException");
 			return new ResponseEntity<String>(exceptionMessageAndStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (IOException ioe) {
-			System.out.println("Exception Molo dans quoi?");
+			System.out.println("Il y a eu une IOException");
 			System.out.println(ioe.getMessage());
 		} finally {
 			writeToFile.close();
 		}
-		System.out.println("Exception Molo dans quoi là?");
-		String exceptionMessageAndStackTrace = ex.getMessage() + "\n" + ex.getStackTrace();
+		String exceptionMessageAndStackTrace = "Exception dans REST : \n\t"+ ex.getMessage() + "\n\t" + ex.getStackTrace();
 		return new ResponseEntity<String>(exceptionMessageAndStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
