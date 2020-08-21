@@ -25,9 +25,7 @@ export class AuthenticationService {
 
     return this.httpClient.post<any>('http://localhost:8080/ngo/register',{username,password}).pipe(
       map(
-        userData => {
-          
-        }
+        userData => userData
       )
  
      );  }
@@ -42,7 +40,7 @@ export class AuthenticationService {
        map(
          userData => {
           sessionStorage.setItem('username',username);
-          let tokenStr= 'Bearer '+userData.jwt;
+          let tokenStr= 'Bearer ' + userData.jwt;
           sessionStorage.setItem('token', tokenStr);
           return userData;
          }

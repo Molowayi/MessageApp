@@ -8,7 +8,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  welcome = 'Welcome to the MessageApp. You may need to register before you log in.'
   username = ''
   password = ''
   invalidLogin = false
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
+
         this.router.navigate([''])
         this.invalidLogin = false
       },
@@ -40,10 +41,11 @@ export class LoginComponent implements OnInit {
     
     (this.loginservice.register(this.username, this.password).subscribe(
       data => {
-          this.nowLogin = "Now you can login"
+        console.log(data)
+        this.welcome = "Good. Registration was successful. Now you can loggin."
       },
       error => {
-        this.registrationError = "There was an error. Registration failed."
+        this.welcome = "There was an error. Registration failed. Try valid name and password."
       }
     )
     );
