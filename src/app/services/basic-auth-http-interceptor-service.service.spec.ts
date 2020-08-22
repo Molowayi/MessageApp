@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { BasicAuthHttpInterceptorServiceService } from './basic-auth-http-interceptor-service.service';
+import { BasicAuthHtppInterceptorService } from './basic-auth-http-interceptor-service.service';
 
-describe('BasicAuthHttpInterceptorServiceService', () => {
+describe('BasicAuthHtppInterceptorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BasicAuthHttpInterceptorServiceService]
+      providers: [BasicAuthHtppInterceptorService]
     });
   });
 
-  it('should be created', inject([BasicAuthHttpInterceptorServiceService], (service: BasicAuthHttpInterceptorServiceService) => {
+  it('should be created', inject([BasicAuthHtppInterceptorService], (service: BasicAuthHtppInterceptorService) => {
     expect(service).toBeTruthy();
   }));
 });
