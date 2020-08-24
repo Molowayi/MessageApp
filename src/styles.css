@@ -68,3 +68,7 @@
 .colrorGrey{
   color: gray;
 }
+
+div.container {
+  min-height: 300px;
+}
