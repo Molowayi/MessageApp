@@ -1,25 +1,9 @@
 <div class="container">
-  <div class="row paddingTop30 paddingBottom30">
+  <div class="row">
     <p class="paddingLeft15">{{welcome}}</p>
     
   </div>
-<div class="row paddingTop30 paddingBottom30">
-  <div class="col-sm-4 alignatleft">
-    User name <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
-  </div>
-  <div class="col-sm-4 paddingBottom30 alignatleft">
-    Password <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
-  </div>
-  <div  class="col-sm-4 alignatleft">
-  <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button><label [(ngModel)]="nowLogin" class="red bold"></label> or 
 
-  <button (click)=register() class="btn btn-success">
-    Register
-  </button><label [(ngModel)]="registrationEroor" class="red bold"></label>
-  </div>
-</div>
     <div class="row paddingTop30">
     <div class="col-sm-4 alignatleft paddingTop30">
       <img src="https://365psd.com/images/previews/ab7/vector-girl-holding-megaphone-25843.jpg" alt="Megaphone image"
@@ -31,6 +15,23 @@
     <div class="col-sm-4 alignright paddingTop30">
       <img src="https://cdn.pixabay.com/photo/2017/08/31/13/10/vacation-2700719_960_720.jpg" alt="Image listener"
            height="180">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 alignatleft">
+      User name <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
+    </div>
+    <div class="col-sm-4 paddingBottom30 alignatleft">
+      Password <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+    </div>
+    <div  class="col-sm-4 alignatleft">
+    <button (click)=checkLogin() class="btn btn-success">
+      Login
+    </button><label [(ngModel)]="nowLogin" class="red bold"></label> or 
+  
+    <button (click)=register() class="btn btn-success">
+      Register
+    </button><label [(ngModel)]="registrationEroor" class="red bold"></label>
     </div>
   </div>
 </div>
