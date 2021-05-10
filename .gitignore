@@ -14,7 +14,8 @@
 # dependencies
 
 /node_modules
-
+*/node_modules
+/back-end-onthaal/src/main/front-end-reactjs/node_modules
 
 
 # IDEs and editors
