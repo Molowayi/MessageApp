@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+.centrerText {
+  text-align: center;
+}
+
+.marginTop30 {
+  margin-top: 30px;
+}
+
+.paddingTop30 {
+  padding-top: 30px;
+}
+
+
+.paddingLeft30 {
+  padding-left: 30px;
+}
+
+.paddingLeft15 {
+  padding-left: 15px;
+}
+
+.paddingTop15 {
+  padding-top: 30px;
+}
+
+.paddingBottom15 {
+  padding-bottom: 30px;
+}
+
+.alignright{
+  text-align: right;
+}
+
+.alignatleft{
+  text-align: left;
+}
+
+.nobullets {
+  text-decoration: none;
+}
+
+.blackbackground {
+  background-color: black;
+  color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ng-invalid {
+  border-color: red;
+}
+
+.border1 {
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.paddin5px {
+  padding:5px;
+  /*margin: 5px;*/
+}
+
+.colrorGrey{
+  color: gray;
+}
+
+/* div.container {
+  min-height: 300px;
+} */
+.marginBottom30 {
+  margin-bottom: 30px;
+}
